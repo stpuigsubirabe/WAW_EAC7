@@ -24,7 +24,7 @@ public class Dissenyador {
      actiu, per tant li assignem verdader.
      */
 
-
+    public Dissenyador(String nf,String nm){nif = nf; nom = nm;}
     /*
      TODO Mètodes accessors    
      */

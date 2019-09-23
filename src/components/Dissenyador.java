@@ -5,6 +5,8 @@
  */
 package components;
 
+import java.util.Scanner;
+
 /**
  *
  * @author root
@@ -14,6 +16,9 @@ public class Dissenyador {
     private String nif;
     private String nom;
     private boolean actiu;
+    
+    /* atribut constant DADES de tipus Scanner */
+    static private Scanner DADES = new Scanner(System.in);
 
     /*
      TODO CONSTRUCTOR
@@ -24,7 +29,11 @@ public class Dissenyador {
      actiu, per tant li assignem verdader.
      */
 
-    public Dissenyador(String nf,String nm){nif = nf; nom = nm;}
+    public Dissenyador(String nf,String nm){
+        nif = nf; 
+        nom = nm;
+        actiu = true;
+    }
     /*
      TODO Mètodes accessors    
      */
@@ -41,6 +50,10 @@ public class Dissenyador {
      Retorn: El nou dissenyador o nova dissenyadora creat/da.
      */
     public static Dissenyador addDissenyador() {
+        System.out.println("Introdueix les dades per crear un nou dissenyador:");
+        System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
+         
+        return;
 
     }
 

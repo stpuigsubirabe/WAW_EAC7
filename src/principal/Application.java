@@ -136,7 +136,13 @@ public class Application {
      tècnica de les excepcions que veurem més endavant
      */
     public static void menuDissenyadors() {
-       
+        
+            System.out.println("\nSelecciona una opció");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta dissenyador");
+            System.out.println("\n2. Modificar dissenyador");
+            System.out.println("\n3. Llista de dissenyadors i dissenyadores");
+            
     }
 
     /*
@@ -163,6 +169,13 @@ public class Application {
      */
     public static void menuJardiners() {
         
+            System.out.println("\nSelecciona una opció");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta jardiner o jardinera");
+            System.out.println("\n2. Modificar jardiner o jardinera");
+            System.out.println("\n3. Assignar torn");
+            System.out.println("\n4. Llista de jardiners i jardineres");
+        
     }
 
     /*
@@ -186,6 +199,13 @@ public class Application {
      tècnica de les excepcions que veurem més endavant
      */
     public static void menuTorns() {
+        
+            System.out.println("\nSelecciona una opció");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta torn de treball");
+            System.out.println("\n2. Modificar torn");
+            System.out.println("\n3. Llista de torns de treball ");
+            
         
     }
 
@@ -212,7 +232,14 @@ public class Application {
      tècnica de les excepcions que veurem més endavant
      */
     public static void menuProjectes() {
-       
+        
+            System.out.println("\nSelecciona una opció");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta projecte nou");
+            System.out.println("\n2. Modificar projecte");
+            System.out.println("\n3. Assignar dissenyador o dissenyadora");
+            System.out.println("\n4. Assiganar jardiner o jardinera");
+            System.out.println("\n4. Llista de projectes");
     }
 
     public static Integer selectEstudi() {

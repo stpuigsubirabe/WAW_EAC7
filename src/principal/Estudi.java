@@ -8,6 +8,8 @@ package principal;
 import components.Dissenyador;
 import components.Jardiner;
 import components.Torn;
+/* importar la utilitat scanner */
+import java.util.Scanner;
 /**
  *
  * @author root
@@ -27,6 +29,8 @@ public class Estudi {
     private Projecte[] projectes = new Projecte[100];
     private int posicioProjectes = 0; //Possició actual buida del vector projectes
 
+    /* atribut constant DADES de tipus Scanner */
+    static private Scanner DADES = new Scanner(System.in);
     /*
      TODO
      CONSTRUCTOR
@@ -37,7 +41,18 @@ public class Estudi {
      - Assignar a l'atribut codi el valor de l'atribut properCodi i actualitzar
      properCodi amb el següent codi a assignar.
      */
-
+    public Estudi( int prCod,String nm ,String adr,int posDis,int posJar,
+            int posTor,int posProj){
+        
+        properCodi = prCod ;
+        nom = nm;
+        adreca = adr;
+        posicioDissenyadors = posDis;
+        posicioJardiners = posJar;
+        posicioTorns = posTor;
+        posicioProjectes = posProj; 
+        
+    }
     /*
      TODO Mètodes accessors    
      */
@@ -54,7 +69,19 @@ public class Estudi {
      Retorn: El nou estudi creat.
      */
     public static Estudi addEstudi() {
+        System.out.println("Introdueix les dades per crear un nou estudi:");
+        System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\nCodi de l'estudi: ");
+        System.out.println("\nNom de l'estudi: ");
+        String nomEstudi = DADES.nextLine();
+        System.out.println("\nAdrdeça de l'estudi: ");
+        String adreEstudi = DADES.nextLine();
+        System.out.println("\nPosició al vector disenyadors: ");
+        System.out.println("\nPosició al vector jardiners: ");
+        System.out.println("\nPosició al vector torns: ");
+        System.out.println("\nPosició al vector projectes: ");
         
+        return;
     }
 
     /*

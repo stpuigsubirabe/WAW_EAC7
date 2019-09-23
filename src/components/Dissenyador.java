@@ -50,10 +50,16 @@ public class Dissenyador {
      Retorn: El nou dissenyador o nova dissenyadora creat/da.
      */
     public static Dissenyador addDissenyador() {
-        System.out.println("Introdueix les dades per crear un nou dissenyador:");
+        System.out.println("Introdueix les dades per crear un nou dissenyador");
         System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\n Nif: ");
+        String nifDissenyador = DADES.nextLine();
+        System.out.println("\n Nom: ");
+        String nomDissenyador = DADES.nextLine();
+        
+        Dissenyador nouDissenyador = new Dissenyador(nifDissenyador, nomDissenyador);
          
-        return;
+        return nouDissenyador;
 
     }
 

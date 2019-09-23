@@ -5,6 +5,8 @@
  */
 package components;
 
+import java.util.Scanner;
+
 /**
  *
  * @author root
@@ -15,6 +17,9 @@ public class Jardiner {
     private String nom;
     private Torn torn;
     private boolean actiu;
+    
+    /* atribut constant DADES de tipus Scanner */
+    static private Scanner DADES = new Scanner(System.in);
 
     /*
      TODO CONSTRUCTOR
@@ -26,7 +31,12 @@ public class Jardiner {
      jardiner o jardinera aquest encara no té assignat cap torn, per tant li assignarem
      null.
      */
-
+    public Jardiner(String nf, String nm){
+        nif = nf;
+        nom = nm;
+        torn = null;
+        actiu = true; 
+    }
     /*
      TODO Mètodes accessors    
      */
@@ -42,7 +52,17 @@ public class Jardiner {
      Retorn: El nou jardiner o nova jardinera creat/da.
      */
     public static Jardiner addJardiner() {
-
+        
+        System.out.println("Introdueix les dades per crear un nou jardiner");
+        System.out.println("\n Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\n Nif: ");
+        String nifJardiner = DADES.nextLine();
+        System.out.println("\n Nom: ");
+        String nomjardiner = DADES.nextLine();
+        
+        Jardiner noujardiner = new Jardiner(nifJardiner,nomjardiner);
+        
+        return noujardiner;
     }
 
     /*

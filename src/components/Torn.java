@@ -4,6 +4,8 @@
  */
 package components;
 
+import java.util.Scanner;
+
 /**
  *
  * @author root
@@ -14,6 +16,9 @@ public class Torn {
     private String nom;
     private String horaInici;
     private String horaAcabament;
+    
+    /* atribut constant DADES de tipus Scanner */
+    static private Scanner DADES = new Scanner(System.in);
 
     /*
      TODO CONSTRUCTOR
@@ -21,12 +26,17 @@ public class Torn {
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      */
-
+    public Torn(String cd,String nm,String hi,String ha){
+        codi = cd;
+        nom = nm;
+        horaInici = hi;
+        horaAcabament = ha;
+    }
 
     /*
      TODO Mètodes accessors    
      */
-   
+   public Torn(){}
 
     /*
      TODO
@@ -39,6 +49,17 @@ public class Torn {
      Retorn: El nou torn creat.
      */
     public static Torn addTorn() {
+        System.out.println("Introdueix les dades per crear un nou torn");
+        System.out.println("\n Introdueix les dades que es demanen i pulsa [ENTER]");
+        
+        System.out.println("\n Codi: ");
+        String codiTorn = DADES.nextLine();
+        System.out.println("\n Nom: ");
+        String nomTorn = DADES.nextLine();
+        
+        horesTorn();
+        
+        return;
 
     }
 
@@ -78,6 +99,23 @@ public class Torn {
      Retorn: Les hores d'inici o acabament del torn.
      */
     public static String horesTorn() {
+        
+        System.out.println("Introdueix les dades per definir l'horari del torn");
+        System.out.println("L'Hora s'enregistra en format 24 hores Ex: \"hh:mm\" \n"
+                + "on hh és l'hora i  mm els minuts");
+        
+        boolean horaInorrecte = true; 
+            while (horaInorrecte){
+            System.out.println("Introdueix les hores:");
+            int hores = DADES.nextInt();
+            System.out.println("Introdueix els minuts");
+            int minuts = DADES.nextInt();
+
+            if (((hores >= 0)&&(hores <=24))&&((minuts >= 0)&&(minuts <60))){
+                horaInorrecte = false;
+            }
+        }
+            
 
     }
 }

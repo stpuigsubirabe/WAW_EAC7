@@ -56,10 +56,14 @@ public class Torn {
         String codiTorn = DADES.nextLine();
         System.out.println("\n Nom: ");
         String nomTorn = DADES.nextLine();
+        System.out.println("Introdueix les dades per definir l'hora d 'inici del torn");
+        String horaInici = horesTorn();
+        System.out.println("Introdueix les dades per definir l'hora en que acaba el torn");
+        String horaFinal = horesTorn();
         
-        horesTorn();
+        Torn nouTorn = new Torn(codiTorn,nomTorn,horaInici,horaFinal);
         
-        return;
+        return nouTorn;
 
     }
 
@@ -100,22 +104,31 @@ public class Torn {
      */
     public static String horesTorn() {
         
-        System.out.println("Introdueix les dades per definir l'horari del torn");
+        int hores = 0;
+        int minuts = 0;
+        
         System.out.println("L'Hora s'enregistra en format 24 hores Ex: \"hh:mm\" \n"
                 + "on hh és l'hora i  mm els minuts");
         
         boolean horaInorrecte = true; 
             while (horaInorrecte){
             System.out.println("Introdueix les hores:");
-            int hores = DADES.nextInt();
+            hores = DADES.nextInt();
             System.out.println("Introdueix els minuts");
-            int minuts = DADES.nextInt();
+            minuts = DADES.nextInt();
 
             if (((hores >= 0)&&(hores <=24))&&((minuts >= 0)&&(minuts <60))){
                 horaInorrecte = false;
             }
         }
-            
+        String textHores = Integer.toString (hores);
+        if (textHores.length()<2){textHores= "0" + textHores;}
+        String textMinuts = Integer.toString(minuts);
+        if (textMinuts.length()<2){textMinuts= "0" + textMinuts;}
+        
+        String horesTorn = textHores +":"+textMinuts;
+        
+        return horesTorn;
 
     }
 }

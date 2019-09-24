@@ -8,6 +8,7 @@ package principal;
 
 import components.Dissenyador;
 import components.Jardiner;
+import java.util.Scanner;
 
 /**
  *
@@ -24,6 +25,9 @@ public class Projecte {
     private Jardiner[] jardiners = new Jardiner[40];
     private int posicioJardiners = 0; //Priemra posició buida del vector jardiners
     
+     /* atribut constant DADES de tipus Scanner */
+    static private Scanner DADES = new Scanner(System.in);
+    
      /*
      TODO
      CONSTRUCTOR
@@ -37,7 +41,21 @@ public class Projecte {
      fals a l'atribut finalitzat.
      - Quan es crea un projecte no té cap dissenyador assignat.
      */
+    public Projecte(String nfCli,double press){
     
+        codi = properCodi; 
+        nifClient = nfCli;
+        finalitzat = false;
+        pressupost = press;
+        dissenyador = null;
+        Jardiner[] jardiners = new Jardiner[40];
+        posicioJardiners = 0;
+        
+        //actualitzar propercodi amb el seguent codi a assignar.
+        
+        properCodi ++;
+    
+    }
     /*
      TODO Mètodes accessors    
      */

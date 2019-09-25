@@ -69,7 +69,18 @@ public class Projecte {
      Retorn: El nou projecte creat.
      */
     public static Projecte addProjecte() {
-
+        
+        System.out.println("Introdueix les dades per crear un nou projecte");
+        System.out.println("\n Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\n Nif del client: ");
+        String nifClient = DADES.nextLine();
+        System.out.println("\n Pressupost del projecte: ");
+        System.out.println("\n Escriu la quantitat en el següent format : 1500.00 ");
+        double pressupost = DADES.nextDouble();
+        
+        Projecte nouProjecte = new Projecte(nifClient,pressupost);
+        
+        return nouProjecte;
     }
     
     /*
@@ -101,6 +112,11 @@ public class Projecte {
      Retorn: cap
      */
     public void addJardiner(Jardiner jardiner) {
+        
+        
+        jardiners[posicioJardiners] = jardiner;
+        
+        posicioJardiners++;
 
     }
 
@@ -115,7 +131,7 @@ public class Projecte {
         }else{
             System.out.println("\nEl projecte no està finalitzat");
         }
-
+        
         for (int i = 0; i < posicioJardiners; i++) {
             jardiners[i].showJardiner();
         }

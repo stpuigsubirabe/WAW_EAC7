@@ -38,7 +38,10 @@ public class Dissenyador {
      TODO Mètodes accessors    
      */
    
-
+    public String getNif(){
+        
+        return nif;
+    }
     /*
      TODO
      Paràmetres: cap

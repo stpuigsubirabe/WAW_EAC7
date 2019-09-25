@@ -41,22 +41,30 @@ public class Estudi {
      - Assignar a l'atribut codi el valor de l'atribut properCodi i actualitzar
      properCodi amb el següent codi a assignar.
      */
-    public Estudi( int prCod,String nm ,String adr,int posDis,int posJar,
-            int posTor,int posProj){
+    public Estudi(int prCod,String nm ,String adr){
         
-        properCodi = prCod ;
+        codi = prCod ;
         nom = nm;
         adreca = adr;
-        posicioDissenyadors = posDis;
-        posicioJardiners = posJar;
-        posicioTorns = posTor;
-        posicioProjectes = posProj; 
+        posicioDissenyadors = 0;
+        posicioJardiners = 0;
+        posicioTorns = 0;
+        posicioProjectes = 0; 
+        
+        properCodi++;
         
     }
     /*
      TODO Mètodes accessors    
      */
-    
+    public Estudi(String nm ,String adr){
+        
+        codi = properCodi;
+        nom = nm;
+        adreca = adr;
+        
+        properCodi++;
+    }
 
     /*
     TODO
@@ -71,17 +79,14 @@ public class Estudi {
     public static Estudi addEstudi() {
         System.out.println("Introdueix les dades per crear un nou estudi:");
         System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
-        System.out.println("\nCodi de l'estudi: ");
         System.out.println("\nNom de l'estudi: ");
         String nomEstudi = DADES.nextLine();
         System.out.println("\nAdrdeça de l'estudi: ");
         String adreEstudi = DADES.nextLine();
-        System.out.println("\nPosició al vector disenyadors: ");
-        System.out.println("\nPosició al vector jardiners: ");
-        System.out.println("\nPosició al vector torns: ");
-        System.out.println("\nPosició al vector projectes: ");
+       
+        Estudi nouEstudi= new Estudi(nomEstudi,adreEstudi);
         
-        return;
+        return nouEstudi ;
     }
 
     /*

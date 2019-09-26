@@ -36,7 +36,10 @@ public class Torn {
     /*
      TODO Mètodes accessors    
      */
-   public Torn(){}
+    public String getCodi(){
+        
+        return codi;
+    }
 
     /*
      TODO

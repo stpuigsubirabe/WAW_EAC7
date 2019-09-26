@@ -40,7 +40,14 @@ public class Jardiner {
     /*
      TODO Mètodes accessors    
      */
-   
+    public String getNif(){
+        
+        return nif;
+    }
+    
+    public void setTorn (Torn trn){
+        torn = trn;
+    }
     /*
      TODO
      Paràmetres: cap

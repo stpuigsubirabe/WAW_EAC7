@@ -62,8 +62,22 @@ public class Estudi {
         codi = properCodi;
         nom = nm;
         adreca = adr;
+        posicioDissenyadors = 0;
+        posicioJardiners = 0;
+        posicioTorns = 0;
+        posicioProjectes = 0;
         
         properCodi++;
+    }
+    
+    public Jardiner getJardiners(int posicioJar){
+        
+        return jardiners[posicioJar];
+    }
+    public Torn getTorns(int posicioTorn ){
+        
+        return torns[posicioTorn];
+    
     }
 
     /*
@@ -259,12 +273,12 @@ public class Estudi {
 
         if (pos >= 0) {
 
-            jardinerSel = this.getJardiners()[pos];
+            jardinerSel = this.getJardiners(pos);
 
             pos = selectTorn(null);
 
             if (pos >= 0) {
-                jardinerSel.setTorn(getTorns()[pos]);
+                jardinerSel.setTorn(getTorns(pos));
             } else {
                 System.out.println("\nNo existeix aquest torn");
             }

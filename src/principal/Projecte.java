@@ -48,7 +48,7 @@ public class Projecte {
         finalitzat = false;
         pressupost = press;
         dissenyador = null;
-        Jardiner[] jardiners = new Jardiner[40];
+        //Jardiner[] jardiners = new Jardiner[40];
         posicioJardiners = 0;
         
         //actualitzar propercodi amb el seguent codi a assignar.
@@ -59,7 +59,10 @@ public class Projecte {
     /*
      TODO Mètodes accessors    
      */
+    public int getCodi(){
 
+            return codi;
+        }   
      /*
      TODO
      Paràmetres: cap

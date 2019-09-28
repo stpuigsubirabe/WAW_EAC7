@@ -62,7 +62,8 @@ public class Projecte {
     public int getCodi(){
 
             return codi;
-        }   
+        }  
+    public void setDissenyador
      /*
      TODO
      Paràmetres: cap

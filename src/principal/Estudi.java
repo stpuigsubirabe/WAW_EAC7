@@ -79,6 +79,14 @@ public class Estudi {
         return torns[posicioTorn];
     
     }
+    public Projecte getProjectes(int posicioProj){
+    
+        return projectes[posicioProj];
+    }
+    public Dissenyador getDissenyadors(int posicioDis){
+    
+        return dissenyadors[posicioDis];
+    }
 
     /*
     TODO
@@ -296,12 +304,12 @@ public class Estudi {
 
         if (pos >= 0) {
 
-            projecteSel = this.getProjectes()[pos];
+            projecteSel = this.getProjectes(pos);
 
             pos = selectDissenyador(null);
 
             if (pos >= 0) {
-                projecteSel.setDissenyador(getDissenyadors()[pos]);
+                projecteSel.setDissenyador(getDissenyadors(pos));
             } else {
                 System.out.println("\nNo existeix aquest dissenyador o dissenyadora");
             }

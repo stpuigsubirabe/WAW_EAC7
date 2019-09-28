@@ -1,5 +1,7 @@
 package principal;
 
+import java.util.Scanner;
+
 /**
  *
  * @author root
@@ -9,6 +11,9 @@ public class Application {
     static private Estudi[] estudis = new Estudi[4];
     static private int posicioEstudis = 0;
     static private Estudi estudiActual = null;
+    
+    /* atribut constant DADES de tipus Scanner */
+    static private Scanner DADES = new Scanner(System.in);
 
     public static void main(String[] args) {
         menuPrincipal();

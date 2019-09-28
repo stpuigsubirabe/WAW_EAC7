@@ -63,7 +63,11 @@ public class Projecte {
 
             return codi;
         }  
-    public void setDissenyador
+    public void setDissenyador(Dissenyador dis){
+        
+        dissenyador = dis;
+    
+    }
      /*
      TODO
      Paràmetres: cap

@@ -87,6 +87,10 @@ public class Estudi {
     
         return dissenyadors[posicioDis];
     }
+    public int getCodi(){
+
+            return codi;
+        } 
 
     /*
     TODO
@@ -325,12 +329,12 @@ public class Estudi {
 
         if (pos >= 0) {
 
-            projecteSel = this.getProjectes()[pos];
+            projecteSel = this.getProjectes(pos);
 
             pos = selectJardiner(null);
 
             if (pos >= 0) {
-                projecteSel.addJardiner(getJardiners()[pos]);
+                projecteSel.addJardiner(getJardiners(pos));
             } else {
                 System.out.println("\nNo existeix aquest dissenyador o dissenyadora");
             }

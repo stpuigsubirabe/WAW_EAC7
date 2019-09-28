@@ -141,13 +141,29 @@ public class Application {
      tècnica de les excepcions que veurem més endavant
      */
     public static void menuDissenyadors() {
+        int opcio = 0;
+        
+        do{
         
             System.out.println("\nSelecciona una opció");
             System.out.println("\n0. Sortir");
             System.out.println("\n1. Alta dissenyador");
             System.out.println("\n2. Modificar dissenyador");
             System.out.println("\n3. Llista de dissenyadors i dissenyadores");
+            opcio = DADES.nextInt();
             
+            switch (opcio){
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+            
+        }while (opcio != 0);    
     }
 
     /*
@@ -173,6 +189,9 @@ public class Application {
      tècnica de les excepcions que veurem més endavant
      */
     public static void menuJardiners() {
+        int opcio = 0;
+        
+        do{
         
             System.out.println("\nSelecciona una opció");
             System.out.println("\n0. Sortir");
@@ -180,7 +199,22 @@ public class Application {
             System.out.println("\n2. Modificar jardiner o jardinera");
             System.out.println("\n3. Assignar torn");
             System.out.println("\n4. Llista de jardiners i jardineres");
-        
+            opcio = DADES.nextInt();
+            
+            switch (opcio){
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+            
+        }while (opcio!=0);
     }
 
     /*
@@ -204,13 +238,29 @@ public class Application {
      tècnica de les excepcions que veurem més endavant
      */
     public static void menuTorns() {
+        int opcio = 0;
+        
+        do{
         
             System.out.println("\nSelecciona una opció");
             System.out.println("\n0. Sortir");
             System.out.println("\n1. Alta torn de treball");
             System.out.println("\n2. Modificar torn");
             System.out.println("\n3. Llista de torns de treball ");
+            opcio = DADES.nextInt();
             
+            switch (opcio){
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;                    
+            }
+            
+        }while(opcio != 0);    
         
     }
 
@@ -237,6 +287,9 @@ public class Application {
      tècnica de les excepcions que veurem més endavant
      */
     public static void menuProjectes() {
+        int opcio = 0;
+        
+        do{
         
             System.out.println("\nSelecciona una opció");
             System.out.println("\n0. Sortir");
@@ -245,6 +298,22 @@ public class Application {
             System.out.println("\n3. Assignar dissenyador o dissenyadora");
             System.out.println("\n4. Assiganar jardiner o jardinera");
             System.out.println("\n4. Llista de projectes");
+            opcio = DADES.nextInt();
+            
+            switch (opcio){
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+            
+        }while (opcio != 0 );
     }
 
     public static Integer selectEstudi() {

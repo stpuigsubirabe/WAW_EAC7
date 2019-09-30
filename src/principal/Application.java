@@ -156,10 +156,23 @@ public class Application {
                 case 0:
                     break;
                 case 1:
+                    estudiActual.addDissenyador();
                     break;
                 case 2:
+                    int indexSel = estudiActual.selectDissenyador(null);
+                    if (indexSel >=0 ){
+                        estudiActual.getDissenyador(indexSel).updateDissenyador();
+                    }else{
+                        System.out.println("\nNo existeix aquest dissenyador");
+                    }
                     break;
                 case 3:
+                    for (int i =0; i < 10; i++){ 
+                    estudiActual.getDissenyador(i).showDissenyador();
+                    }
+                    break;
+                default:
+                    System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
                     break;
             }
             
@@ -212,6 +225,9 @@ public class Application {
                     break;
                 case 4:
                     break;
+                default:
+                    System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+                    break;
             }
             
         }while (opcio!=0);
@@ -257,7 +273,10 @@ public class Application {
                 case 2:
                     break;
                 case 3:
-                    break;                    
+                    break;
+                default:
+                    System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+                    break;
             }
             
         }while(opcio != 0);    
@@ -304,12 +323,16 @@ public class Application {
                 case 0:
                     break;
                 case 1:
+                    estudiActual.addProjecte();
                     break;
                 case 2:
                     break;
                 case 3:
                     break;
                 case 4:
+                    break;
+                default:
+                    System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
                     break;
             }
             

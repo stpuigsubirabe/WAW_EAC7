@@ -70,28 +70,30 @@ public class Estudi {
         properCodi++;
     }
     
-    public Jardiner getJardiners(int posicioJar){
+    public Jardiner getJardiner(int posicioJar){
         
         return jardiners[posicioJar];
     }
-    public Torn getTorns(int posicioTorn ){
+    public Torn getTorn(int posicioTorn ){
         
         return torns[posicioTorn];
     
     }
-    public Projecte getProjectes(int posicioProj){
+    public Projecte getProjecte(int posicioProj){
     
         return projectes[posicioProj];
     }
-    public Dissenyador getDissenyadors(int posicioDis){
+    public Dissenyador getDissenyador(int posicioDis){
     
         return dissenyadors[posicioDis];
     }
+    
     public int getCodi(){
 
             return codi;
         } 
-
+   
+    
     /*
     TODO
      Paràmetres: cap
@@ -129,6 +131,9 @@ public class Estudi {
      */
     public void updateEstudi() {
         
+        showEstudi();
+        setEstudi();  
+        
     }
 
     public void showEstudi() {
@@ -136,7 +141,14 @@ public class Estudi {
         System.out.println("\nNom: " + nom);
         System.out.println("\nAdreça: " + adreca);
     }
-
+    public void  setEstudi() {
+        System.out.println("Introdueix les dades per modificar l'estudi:");
+        System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\nNou om de l'estudi: ");
+        nom = DADES.nextLine();
+        System.out.println("\n Nova adrdeça de l'estudi: ");
+        adreca = DADES.nextLine();
+    }
     /*
      DISSENYADOR
      */
@@ -154,6 +166,16 @@ public class Estudi {
      Retorn: cap
      */
     public void addDissenyador() {
+        
+        int posDissenyador = selectDissenyador(null);
+        
+        if (posDissenyador >= 0) {
+            System.out.println("\n Aquest dissenyador ja existeix");
+        }else{
+            dissenyadors[posicioDissenyadors] = Dissenyador.addDissenyador();
+            posicioDissenyadors ++;
+        }
+            
         
     }
 
@@ -190,6 +212,15 @@ public class Estudi {
      Retorn: cap
      */
     public void addJardiner() {
+        
+        int posjardiner = selectJardiner(null);
+        
+        if (posjardiner >= 0) {
+            System.out.println("\n Aquest jardiner ja existeix");
+        }else{
+            jardiners[posicioJardiners] = Jardiner.addJardiner();
+            posicioJardiners ++;
+        }
 
     }
 
@@ -224,6 +255,14 @@ public class Estudi {
      Retorn: cap
      */
     public void addTorn() {
+        int posTorn = selectTorn(null);
+        
+        if (posTorn >= 0) {
+            System.out.println("\n Aquest torn ja existeix");
+        }else{
+            torns[posicioTorns] = Torn.addTorn();
+            posicioTorns ++;
+        }
 
     }
 
@@ -259,6 +298,16 @@ public class Estudi {
      Retorn: cap
      */
     public void addProjecte() {
+        
+        int posProjectes = selectProjecte(null);
+        
+        if (posProjectes >= 0) {
+            System.out.println("\n Aquest projecte ja existeix");
+        }else{
+            projectes[posicioProjectes] = Projecte.addProjecte();
+            posicioProjectes ++;
+        }
+            
 
     }
 
@@ -285,12 +334,12 @@ public class Estudi {
 
         if (pos >= 0) {
 
-            jardinerSel = this.getJardiners(pos);
+            jardinerSel = this.getJardiner(pos);
 
             pos = selectTorn(null);
 
             if (pos >= 0) {
-                jardinerSel.setTorn(getTorns(pos));
+                jardinerSel.setTorn(getTorn(pos));
             } else {
                 System.out.println("\nNo existeix aquest torn");
             }
@@ -308,12 +357,12 @@ public class Estudi {
 
         if (pos >= 0) {
 
-            projecteSel = this.getProjectes(pos);
+            projecteSel = this.getProjecte(pos);
 
             pos = selectDissenyador(null);
 
             if (pos >= 0) {
-                projecteSel.setDissenyador(getDissenyadors(pos));
+                projecteSel.setDissenyador(getDissenyador(pos));
             } else {
                 System.out.println("\nNo existeix aquest dissenyador o dissenyadora");
             }
@@ -329,12 +378,12 @@ public class Estudi {
 
         if (pos >= 0) {
 
-            projecteSel = this.getProjectes(pos);
+            projecteSel = this.getProjecte(pos);
 
             pos = selectJardiner(null);
 
             if (pos >= 0) {
-                projecteSel.addJardiner(getJardiners(pos));
+                projecteSel.addJardiner(getJardiner(pos));
             } else {
                 System.out.println("\nNo existeix aquest dissenyador o dissenyadora");
             }

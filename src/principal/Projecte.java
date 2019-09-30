@@ -41,7 +41,8 @@ public class Projecte {
      fals a l'atribut finalitzat.
      - Quan es crea un projecte no té cap dissenyador assignat.
      */
-    public Projecte(String nfCli,double press){
+    
+    public Projecte (String nfCli,double press){
     
         codi = properCodi; 
         nifClient = nfCli;
@@ -68,6 +69,18 @@ public class Projecte {
         dissenyador = dis;
     
     }
+    
+   public void setProjecte(Projecte projActual){
+       
+        System.out.println("Introdueix les dades per actualitzar el projecte");
+        System.out.println("\n Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\n Nif del client: ");
+        nifClient = DADES.nextLine();
+        System.out.println("\n Pressupost del projecte: ");
+        System.out.println("\n Escriu la quantitat en el següent format : 1500.00 ");
+        pressupost = DADES.nextDouble();
+        
+   }
      /*
      TODO
      Paràmetres: cap
@@ -86,7 +99,7 @@ public class Projecte {
         System.out.println("\n Escriu la quantitat en el següent format : 1500.00 ");
         double pressupost = DADES.nextDouble();
         
-        Projecte nouProjecte = new Projecte(nifClient,pressupost);
+        Projecte nouProjecte = new Projecte (nifClient,pressupost);
         
         return nouProjecte;
     }

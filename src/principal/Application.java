@@ -1,6 +1,8 @@
 package principal;
 
 import java.util.Scanner;
+import components.Torn;
+import components.Dissenyador;
 
 /**
  *
@@ -167,8 +169,13 @@ public class Application {
                     }
                     break;
                 case 3:
-                    for (int i =0; i < 10; i++){ 
-                    estudiActual.getDissenyador(i).showDissenyador();
+                    for (int i =0; i < 10; i++){
+                        if (estudiActual.getDissenyador(i)!= null){    
+
+                            estudiActual.getDissenyador(i).showDissenyador();
+                        }else {
+                            break;
+                        }
                     }
                     break;
                 default:
@@ -218,12 +225,35 @@ public class Application {
                 case 0:
                     break;
                 case 1:
+                    estudiActual.addJardiner();
                     break;
                 case 2:
+                    int indexSel = estudiActual.selectJardiner(null);
+                    if (indexSel >=0 ){ 
+                        estudiActual.getJardiner(indexSel).updateJardiner();
+                    }else{
+                        System.out.println("\nNo existeix aquest jardiner");
+                    }
                     break;
                 case 3:
+                    int indexTorns = estudiActual.selectTorn(null);
+                    Torn trn = estudiActual.getTorn(indexTorns);
+                    int indexJar = estudiActual.selectJardiner(null);
+                    if ((indexJar >=0 )&&(trn != null)){ 
+                        estudiActual.getJardiner(indexJar).setTorn(trn);
+                    }else{
+                        System.out.println("\nAquest Jardiner o aquest turn no existeixen");
+                    }
                     break;
                 case 4:
+                    for (int i =0; i < 40 ; i++){
+                        if (estudiActual.getJardiner(i)!= null){    
+
+                            estudiActual.getJardiner(i).showJardiner();
+                        }else {
+                            break;
+                        }
+                    }
                     break;
                 default:
                     System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
@@ -269,10 +299,25 @@ public class Application {
                 case 0:
                     break;
                 case 1:
+                    estudiActual.addTorn();
                     break;
                 case 2:
+                    int indexTorn = estudiActual.selectTorn(null);
+                    if (indexTorn >=0 ){ 
+                        estudiActual.getTorn(indexTorn).updateTorn();
+                    }else{
+                        System.out.println("\nNo existeix aquest torn de feina");
+                    }
                     break;
                 case 3:
+                    for (int i =0; i < 10 ; i++){
+                        if (estudiActual.getTorn(i)!= null){    
+
+                            estudiActual.getTorn(i).showTorn();
+                        }else {
+                            break;
+                        }
+                    }
                     break;
                 default:
                     System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
@@ -326,12 +371,35 @@ public class Application {
                     estudiActual.addProjecte();
                     break;
                 case 2:
+                    int indexProj = estudiActual.selectProjecte(null);
+                    if (indexProj >=0){
+                    estudiActual.getProjecte(indexProj).updateProjecte();
+                    }else{
+                    System.out.println("\nNo existeix aquest projecte");
+                    }
                     break;
                 case 3:
+                    int indexDis = estudiActual.selectDissenyador(null);
+                    Dissenyador dis = estudiActual.getDissenyador(indexDis);
+                    
+                    indexProj = estudiActual.selectProjecte(null);
+                    if (indexProj >=0){
+                    estudiActual.getProjecte(indexProj).setDissenyador(dis);
+                    }else{
+                    System.out.println("\nNo existeix aquest projecte");    
+                    }
                     break;
                 case 4:
                     break;
                 default:
+                    for (int i =0; i < 10 ; i++){
+                        if (estudiActual.getProjecte(i)!= null){    
+
+                            estudiActual.getProjecte(i).showProjecte();
+                        }else {
+                            break;
+                        }
+                    }
                     System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
                     break;
             }

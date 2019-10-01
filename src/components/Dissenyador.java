@@ -82,6 +82,10 @@ public class Dissenyador {
      */
     public void updateDissenyador() {
         
+        showDissenyador();
+        setDissenyador();
+        
+        
     }
 
     public void showDissenyador() {
@@ -90,9 +94,33 @@ public class Dissenyador {
         System.out.println("\nL'estat és: ");
         
         if(actiu){
-            System.out.print("Actiu");
+            System.out.print("El dissenyador o dissenyadora està en Actiu");
         }else{
-            System.out.print("No actiu");
+            System.out.print("El dissenyador o dissenyadora no està en Actiu");
+        }
+    }
+    public void setDissenyador(){
+    System.out.println("Introdueix les dades per modificar al dissenyador:");
+        System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\nNIF del dissenyador ");
+        nif = DADES.nextLine();
+        System.out.println("\n Nom del dissenyador o dissenyadora: ");
+        nom = DADES.nextLine();
+        System.out.println("\n Aquest dissenyador es troba actiu ? "
+                + "\n Introduex 1 si és actiu" 
+                + "\n Introdueix 0 si està de baixa o de vacances" );
+        int disActiu = DADES.nextInt();
+        
+        switch (disActiu){
+            case 1:
+                actiu = true;
+                break;
+            case 2:
+                actiu = false;
+                break;
+            default:
+                System.out.println("\n Has d'introduïr un valor correcte: ");
+                break;       
         }
     }
 }

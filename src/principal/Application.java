@@ -146,7 +146,7 @@ public class Application {
         int opcio = 0;
         
         do{
-        
+            int indexSel = -1;
             System.out.println("\nSelecciona una opció");
             System.out.println("\n0. Sortir");
             System.out.println("\n1. Alta dissenyador");
@@ -161,7 +161,7 @@ public class Application {
                     estudiActual.addDissenyador();
                     break;
                 case 2:
-                    int indexSel = estudiActual.selectDissenyador(null);
+                    indexSel = estudiActual.selectDissenyador(null);
                     if (indexSel >=0 ){
                         estudiActual.getDissenyador(indexSel).updateDissenyador();
                     }else{
@@ -212,7 +212,7 @@ public class Application {
         int opcio = 0;
         
         do{
-        
+            int indexSel = -1;
             System.out.println("\nSelecciona una opció");
             System.out.println("\n0. Sortir");
             System.out.println("\n1. Alta jardiner o jardinera");
@@ -228,7 +228,7 @@ public class Application {
                     estudiActual.addJardiner();
                     break;
                 case 2:
-                    int indexSel = estudiActual.selectJardiner(null);
+                    indexSel = estudiActual.selectJardiner(null);
                     if (indexSel >=0 ){ 
                         estudiActual.getJardiner(indexSel).updateJardiner();
                     }else{
@@ -236,11 +236,11 @@ public class Application {
                     }
                     break;
                 case 3:
-                    int indexTorns = estudiActual.selectTorn(null);
-                    Torn trn = estudiActual.getTorn(indexTorns);
-                    int indexJar = estudiActual.selectJardiner(null);
-                    if ((indexJar >=0 )&&(trn != null)){ 
-                        estudiActual.getJardiner(indexJar).setTorn(trn);
+                    indexSel = estudiActual.selectTorn(null);
+                    Torn trn = estudiActual.getTorn(indexSel);
+                    indexSel = estudiActual.selectJardiner(null);
+                    if ((indexSel >=0 )&&(trn != null)){ 
+                        estudiActual.getJardiner(indexSel).setTorn(trn);
                     }else{
                         System.out.println("\nAquest Jardiner o aquest turn no existeixen");
                     }
@@ -287,7 +287,7 @@ public class Application {
         int opcio = 0;
         
         do{
-        
+            int indexSel = -1;
             System.out.println("\nSelecciona una opció");
             System.out.println("\n0. Sortir");
             System.out.println("\n1. Alta torn de treball");
@@ -302,9 +302,9 @@ public class Application {
                     estudiActual.addTorn();
                     break;
                 case 2:
-                    int indexTorn = estudiActual.selectTorn(null);
-                    if (indexTorn >=0 ){ 
-                        estudiActual.getTorn(indexTorn).updateTorn();
+                    indexSel = estudiActual.selectTorn(null);
+                    if (indexSel >=0 ){ 
+                        estudiActual.getTorn(indexSel).updateTorn();
                     }else{
                         System.out.println("\nNo existeix aquest torn de feina");
                     }
@@ -354,7 +354,7 @@ public class Application {
         int opcio = 0;
         
         do{
-        
+            int indexSel = -1;
             System.out.println("\nSelecciona una opció");
             System.out.println("\n0. Sortir");
             System.out.println("\n1. Alta projecte nou");
@@ -371,20 +371,20 @@ public class Application {
                     estudiActual.addProjecte();
                     break;
                 case 2:
-                    int indexProj = estudiActual.selectProjecte(null);
-                    if (indexProj >=0){
-                    estudiActual.getProjecte(indexProj).updateProjecte();
+                    indexSel = estudiActual.selectProjecte(null);
+                    if (indexSel >=0){
+                    estudiActual.getProjecte(indexSel).updateProjecte();
                     }else{
                     System.out.println("\nNo existeix aquest projecte");
                     }
                     break;
                 case 3:
-                    int indexDis = estudiActual.selectDissenyador(null);
-                    Dissenyador dis = estudiActual.getDissenyador(indexDis);
+                    indexSel = estudiActual.selectDissenyador(null);
+                    Dissenyador dis = estudiActual.getDissenyador(indexSel);
                     
-                    indexProj = estudiActual.selectProjecte(null);
-                    if (indexProj >=0){
-                    estudiActual.getProjecte(indexProj).setDissenyador(dis);
+                    indexSel = estudiActual.selectProjecte(null);
+                    if (indexSel >=0){
+                    estudiActual.getProjecte(indexSel).setDissenyador(dis);
                     }else{
                     System.out.println("\nNo existeix aquest projecte");    
                     }

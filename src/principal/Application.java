@@ -302,7 +302,7 @@ public class Application {
             System.out.println("\n2. Modificar torn");
             System.out.println("\n3. Llista de torns de treball ");
             opcio = DADES.nextInt();
-            
+                        
             switch (opcio){
                 case 0:
                     break;
@@ -369,7 +369,7 @@ public class Application {
             System.out.println("\n2. Modificar projecte");
             System.out.println("\n3. Assignar dissenyador o dissenyadora");
             System.out.println("\n4. Assiganar jardiner o jardinera");
-            System.out.println("\n4. Llista de projectes");
+            System.out.println("\n5. Llista de projectes");
             opcio = DADES.nextInt();
             
             switch (opcio){
@@ -418,15 +418,17 @@ public class Application {
                     System.out.println("\nNo existeix aquest projecte");    
                     }
                     break;
-                default:
+                case 5:
                     for (int i =0; i < 10 ; i++){
-                        if (estudiActual.getProjecte(i)!= null){    
+                        if (estudiActual.getProjecte(i)!= null){
 
                             estudiActual.getProjecte(i).showProjecte();
                         }else {
                             break;
                         }
                     }
+                    break;
+                default:
                     System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
                     break;
             }

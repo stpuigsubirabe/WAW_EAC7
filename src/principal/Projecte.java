@@ -70,17 +70,6 @@ public class Projecte {
     
     }
     
-   public void setProjecte(Projecte projActual){
-       
-        System.out.println("Introdueix les dades per actualitzar el projecte");
-        System.out.println("\n Introdueix les dades que es demanen i pulsa [ENTER]");
-        System.out.println("\n Nif del client: ");
-        nifClient = DADES.nextLine();
-        System.out.println("\n Pressupost del projecte: ");
-        System.out.println("\n Escriu la quantitat en el següent format : 1500.00 ");
-        pressupost = DADES.nextDouble();
-        
-   }
      /*
      TODO
      Paràmetres: cap
@@ -120,7 +109,32 @@ public class Projecte {
      Retorn: cap
      */
     public void updateProjecte() {
-
+        
+        showProjecte();
+        
+        System.out.println("Introdueix les dades per modificar projecte");
+        System.out.println("\n Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\n Nif del client: ");
+        nifClient = DADES.nextLine();
+        System.out.println("\n Pressupost del projecte: ");
+        System.out.println("\n Escriu la quantitat en el següent format : 1500.00 ");
+        pressupost = DADES.nextDouble();
+        System.out.println("\n Aquest projecte esta finalitzat? "
+                + "\n Introduex 1 si esta finalitzat" 
+                + "\n Introdueix 0 si no esta finalitzat" );
+        int projFin = DADES.nextInt();
+        
+        switch (projFin){
+            case 1:
+                finalitzat = true;
+                break;
+            case 0:
+                finalitzat = false;
+                break;
+            default:
+                System.out.println("\n Has d'introduïr un valor correcte: ");
+                break;      
+        }
     }
 
     /*
@@ -145,6 +159,7 @@ public class Projecte {
         System.out.println("\nLes dades del projecte amb codi " + codi + " són:");
         System.out.println("\nNIF client: " + nifClient);
         System.out.println("\nPressupost: " + pressupost);
+        System.out.println("\nEl seu dissenyador es: ");
         dissenyador.showDissenyador();
         
         if(finalitzat){
@@ -152,8 +167,8 @@ public class Projecte {
         }else{
             System.out.println("\nEl projecte no està finalitzat");
         }
-        
-        for (int i = 0; i < posicioJardiners; i++) {
+        System.out.println("\nEls seus jardiners son: ");
+        for (int i = 0; i < posicioJardiners; i++) { 
             jardiners[i].showJardiner();
         }
     }

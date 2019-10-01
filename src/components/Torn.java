@@ -54,7 +54,8 @@ public class Torn {
     public static Torn addTorn() {
         System.out.println("Introdueix les dades per crear un nou torn");
         System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
-        
+        //Aquesta linea la posoper que me esta fallan la lectura de dades
+        DADES.nextLine();
         System.out.println("\nCodi: ");
         String codTorn = DADES.nextLine();
         System.out.println("\nNom: ");
@@ -69,6 +70,21 @@ public class Torn {
         return nouTorn;
 
     }
+    
+    public void setTorn(){
+        //Aquesta linea la posoper que me esta fallan la lectura de dades
+        DADES.nextLine();
+        System.out.println("\nIntrodueix les dades per modificar el torn:");
+        System.out.println("\n Codi: ");
+        codi = DADES.nextLine();
+        System.out.println("\n Nom: ");
+        nom = DADES.nextLine();
+        System.out.println("Introdueix les dades per definir l'hora d 'inici del torn");
+        horaInici = horesTorn();
+        System.out.println("Introdueix les dades per definir l'hora en que acaba el torn");
+        horaAcabament = horesTorn();
+    
+    }
 
     /*
      TODO
@@ -82,17 +98,8 @@ public class Torn {
      */
     public void updateTorn() {
         
-        showTorn(); 
-        
-        System.out.println("\nIntrodueix les dades per modificar el torn:");
-        System.out.println("\n Codi: ");
-        codi = DADES.nextLine();
-        System.out.println("\n Nom: ");
-        nom = DADES.nextLine();
-        System.out.println("Introdueix les dades per definir l'hora d 'inici del torn");
-        horaInici = horesTorn();
-        System.out.println("Introdueix les dades per definir l'hora en que acaba el torn");
-        horaAcabament = horesTorn();
+        showTorn();
+        setTorn();
         
     }
 

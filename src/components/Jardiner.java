@@ -87,7 +87,12 @@ public class Jardiner {
      Retorn: cap
      */
     public void updateJardiner() {
-       
+        if (torn == null){
+            System.out.println("\n Abnas de modificar el jardiner li has de assignar un torn de treball"); 
+        }else{    
+            showJardiner();
+            setJardiner();
+        }
     }
 
     public void showJardiner() {
@@ -97,9 +102,35 @@ public class Jardiner {
         System.out.println("\nL'estat és: ");
         
         if(actiu){
-            System.out.print("Actiu");
+            System.out.print("El jardiner o jardinera està en Actiu");
         }else{
-            System.out.print("No actiu");
+            System.out.print("El jardiner o jardinera no està en Actiu\"");
         }
+    }
+    public void setJardiner(){
+        
+        System.out.println("\nIntrodueix les dades per modificar al Jardiner:");
+        System.out.println("\nIntrodueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("\nNIF del Jardiner o Jardinera ");
+        nif = DADES.nextLine();
+        System.out.println("\n Nom del Jardiner o Jardinera: ");
+        nom = DADES.nextLine();
+        System.out.println("\n Aquest jardiner o jardinera es troba actiu ? "
+                + "\n Introduex 1 si és actiu" 
+                + "\n Introdueix 0 si està de baixa o de vacances" );
+        int jarActiu = DADES.nextInt();
+        
+        switch (jarActiu){
+            case 1:
+                actiu = true;
+                break;
+            case 0:
+                actiu = false;
+                break;
+            default:
+                System.out.println("\n Has d'introduïr un valor correcte: ");
+                break;      
+        }        
+        
     }
 }

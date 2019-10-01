@@ -53,7 +53,7 @@ public class Torn {
      */
     public static Torn addTorn() {
         System.out.println("Introdueix les dades per crear un nou torn");
-        System.out.println("\n Introdueix les dades que es demanen i pulsa [ENTER]");
+        System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
         
         System.out.println("\n Codi: ");
         String codiTorn = DADES.nextLine();
@@ -81,6 +81,18 @@ public class Torn {
      Retorn: cap
      */
     public void updateTorn() {
+        
+        showTorn();
+        
+        System.out.println("\nIntrodueix les dades per modificar el torn:");
+        System.out.println("\n Codi: ");
+        codi = DADES.nextLine();
+        System.out.println("\n Nom: ");
+        nom = DADES.nextLine();
+        System.out.println("Introdueix les dades per definir l'hora d 'inici del torn");
+        horaInici = horesTorn();
+        System.out.println("Introdueix les dades per definir l'hora en que acaba el torn");
+        horaAcabament = horesTorn();
         
     }
 
@@ -115,9 +127,9 @@ public class Torn {
         
         boolean horaInorrecte = true; 
             while (horaInorrecte){
-            System.out.println("Introdueix les hores:");
+             System.out.println("Introdueix les hores:");
             hores = DADES.nextInt();
-            System.out.println("Introdueix els minuts");
+             System.out.println("Introdueix els minuts");
             minuts = DADES.nextInt();
 
             if (((hores >= 0)&&(hores <=24))&&((minuts >= 0)&&(minuts <60))){

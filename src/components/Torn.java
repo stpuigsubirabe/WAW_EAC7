@@ -55,16 +55,16 @@ public class Torn {
         System.out.println("Introdueix les dades per crear un nou torn");
         System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
         
-        System.out.println("\n Codi: ");
-        String codiTorn = DADES.nextLine();
-        System.out.println("\n Nom: ");
+        System.out.println("\nCodi: ");
+        String codTorn = DADES.nextLine();
+        System.out.println("\nNom: ");
         String nomTorn = DADES.nextLine();
         System.out.println("Introdueix les dades per definir l'hora d 'inici del torn");
         String horaInici = horesTorn();
         System.out.println("Introdueix les dades per definir l'hora en que acaba el torn");
         String horaFinal = horesTorn();
         
-        Torn nouTorn = new Torn(codiTorn,nomTorn,horaInici,horaFinal);
+        Torn nouTorn = new Torn(codTorn,nomTorn,horaInici,horaFinal);
         
         return nouTorn;
 

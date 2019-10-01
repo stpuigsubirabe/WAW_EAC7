@@ -3,6 +3,7 @@ package principal;
 import java.util.Scanner;
 import components.Torn;
 import components.Dissenyador;
+import components.Jardiner;
 
 /**
  *
@@ -236,25 +237,28 @@ public class Application {
                     }
                     break;
                 case 3:
+                    Torn trn = null;
                     indexSel = estudiActual.selectTorn(null);
-                    Torn trn = estudiActual.getTorn(indexSel);
+                    if (indexSel != -1){
+                    trn = estudiActual.getTorn(indexSel);
+                    }else{
+                    System.out.println("\nAquest torn no existeix");
+                    break; 
+                    }
                     indexSel = estudiActual.selectJardiner(null);
-                    if ((indexSel >=0 )&&(trn != null)){ 
+                     if (indexSel != -1){ 
                         estudiActual.getJardiner(indexSel).setTorn(trn);
                     }else{
-                        System.out.println("\nAquest Jardiner o aquest turn no existeixen");
+                        System.out.println("\nAquest Jardiner no existeixen");
                     }
-                    break;
+                    break; 
                 case 4:
                     for (int i =0; i < 40 ; i++){
                         if (estudiActual.getJardiner(i)!= null){
                             
-                        }else if (estudiActual.getJardiner(i).getTorn() != null){
-
                             estudiActual.getJardiner(i).showJardiner();
+                        
                         }else{
-                            System.out.println("\nAssegurat que tens jardiners"
-                                    + "donats d'alta i que tots tenen un torn asignat");
                             break;
                         }
                     }
@@ -383,9 +387,14 @@ public class Application {
                     }
                     break;
                 case 3:
+                    Dissenyador dis = null;
                     indexSel = estudiActual.selectDissenyador(null);
-                    Dissenyador dis = estudiActual.getDissenyador(indexSel);
-                    
+                    if(indexSel >=0){
+                    dis = estudiActual.getDissenyador(indexSel);
+                    }else{
+                    System.out.println("\nNo existeix aquest dissenyador");
+                    break;
+                    }
                     indexSel = estudiActual.selectProjecte(null);
                     if (indexSel >=0){
                     estudiActual.getProjecte(indexSel).setDissenyador(dis);
@@ -394,6 +403,20 @@ public class Application {
                     }
                     break;
                 case 4:
+                    Jardiner jar = null;
+                    indexSel = estudiActual.selectJardiner(null);
+                    if(indexSel >=0){
+                    jar = estudiActual.getJardiner(indexSel);
+                    }else{
+                    System.out.println("\nNo existeix aquest dissenyador");
+                    break;
+                    }
+                    indexSel = estudiActual.selectProjecte(null);
+                    if (indexSel >=0){
+                    estudiActual.getProjecte(indexSel).addJardiner(jar);
+                    }else{
+                    System.out.println("\nNo existeix aquest projecte");    
+                    }
                     break;
                 default:
                     for (int i =0; i < 10 ; i++){

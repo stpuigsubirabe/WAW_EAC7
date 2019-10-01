@@ -132,10 +132,10 @@ public class Projecte {
      - actualitza la posició del vector jardiners.
      Retorn: cap
      */
-    public void addJardiner(Jardiner jardiner) {
+    public void addJardiner(Jardiner jar) {
         
         
-        jardiners[posicioJardiners] = jardiner;
+        jardiners[posicioJardiners] = jar;
         
         posicioJardiners++;
 

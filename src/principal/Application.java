@@ -247,10 +247,14 @@ public class Application {
                     break;
                 case 4:
                     for (int i =0; i < 40 ; i++){
-                        if (estudiActual.getJardiner(i)!= null){    
+                        if (estudiActual.getJardiner(i)!= null){
+                            
+                        }else if (estudiActual.getJardiner(i).getTorn() != null){
 
                             estudiActual.getJardiner(i).showJardiner();
-                        }else {
+                        }else{
+                            System.out.println("\nAssegurat que tens jardiners"
+                                    + "donats d'alta i que tots tenen un torn asignat");
                             break;
                         }
                     }

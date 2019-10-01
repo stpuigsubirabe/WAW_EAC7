@@ -82,7 +82,7 @@ public class Torn {
      */
     public void updateTorn() {
         
-        showTorn();
+        showTorn(); 
         
         System.out.println("\nIntrodueix les dades per modificar el torn:");
         System.out.println("\n Codi: ");

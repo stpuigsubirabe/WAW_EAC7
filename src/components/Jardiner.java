@@ -44,6 +44,10 @@ public class Jardiner {
         
         return nif;
     }
+    public Torn getTorn(){
+    
+        return torn;
+    }
     
     public void setTorn (Torn trn){
         torn = trn;

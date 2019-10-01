@@ -100,8 +100,8 @@ public class Dissenyador {
         }
     }
     public void setDissenyador(){
-    System.out.println("Introdueix les dades per modificar al dissenyador:");
-        System.out.println("Introdueix les dades que es demanen i pulsa [ENTER]");
+    System.out.println("\nIntrodueix les dades per modificar al dissenyador:");
+        System.out.println("\nIntrodueix les dades que es demanen i pulsa [ENTER]");
         System.out.println("\nNIF del dissenyador ");
         nif = DADES.nextLine();
         System.out.println("\n Nom del dissenyador o dissenyadora: ");
@@ -115,7 +115,7 @@ public class Dissenyador {
             case 1:
                 actiu = true;
                 break;
-            case 2:
+            case 0:
                 actiu = false;
                 break;
             default:
